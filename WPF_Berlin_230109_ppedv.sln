@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M02_Controls", "Controls\M0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personendatenbank", "Personendatenbank\Personendatenbank.csproj", "{58020AFA-9688-40E1-BA21-46D2CE24963E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Container", "Container\Container.csproj", "{4D9AED64-EA05-4165-A563-854B76AB091E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M03_Container", "Container\M03_Container.csproj", "{4D9AED64-EA05-4165-A563-854B76AB091E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventRouting", "EventRouting\EventRouting.csproj", "{71D18A9D-E61F-42AA-8359-BEDDC8A0E510}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4D9AED64-EA05-4165-A563-854B76AB091E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9AED64-EA05-4165-A563-854B76AB091E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9AED64-EA05-4165-A563-854B76AB091E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D18A9D-E61F-42AA-8359-BEDDC8A0E510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D18A9D-E61F-42AA-8359-BEDDC8A0E510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D18A9D-E61F-42AA-8359-BEDDC8A0E510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D18A9D-E61F-42AA-8359-BEDDC8A0E510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
