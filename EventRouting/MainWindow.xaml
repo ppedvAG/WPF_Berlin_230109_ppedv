@@ -5,13 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventRouting"
         mc:Ignorable="d"
-        Title="MainWindow" Height="316" Width="474"
+        Title="MainWindow" Height="441" Width="474"
         ButtonBase.Click="Window_Click"
         x:Name="Wnd_Main">
-    <StackPanel>
-        <Button x:Name="Btn_Beispiel" Content="Klick Mich" Click="Button_Click"/>
-        <Button Content="2. Button"/>
-        <TextBox x:Name="Tbx_Input" TextChanged="Tbx_Input_TextChanged"/>
-        <TextBlock Height="200" x:Name="Tbl_Output"/>
+    
+    <StackPanel x:Name="Aqua" Background="Aqua"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+        <StackPanel x:Name="Grün" Background="Green" Margin="20"
+                    PreviewMouseDown="SP_PreviewMouseDown"
+                    MouseDown="SP_MouseDown">
+            <StackPanel x:Name="Gelb" Background="Yellow" Margin="20"
+                        PreviewMouseDown="SP_PreviewMouseDown"
+                        MouseDown="SP_MouseDown">
+                <StackPanel x:Name="Rot" Background="Red" Margin="20"
+                            PreviewMouseDown="SP_PreviewMouseDown"
+                            MouseDown="SP_MouseDown">
+
+                    <Button x:Name="Btn_Beispiel" Content="Klick Mich" Click="Button_Click" Margin="20"/>
+                    <Button Content="2. Button"/>
+                    <TextBox x:Name="Tbx_Input" TextChanged="Tbx_Input_TextChanged"/>
+                
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock Height="200" x:Name="Tbl_Output" Background="White"/>
     </StackPanel>
+    
 </Window>
