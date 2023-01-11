@@ -34,6 +34,15 @@
             </Setter>
             <Setter Property="Background" Value="Aqua"/>
         </Style>
+
+        <DataTemplate DataType="{x:Type local:Person}">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding Vorname}" Margin="2"/>
+                <TextBlock Text="{Binding Nachname}" Margin="2"/>
+                <TextBlock Text="{Binding Alter, StringFormat='({0})'}" Margin="2"/>
+                <Button Content="Löschen" x:Name="Btn_Löschen" Click="Btn_Löschen_Click" Tag="{Binding}"/>
+            </StackPanel>
+        </DataTemplate>
     </Window.Resources>
     
     <StackPanel>
@@ -44,7 +53,7 @@
                 Click="Button_Click"
                 Background="Yellow"/>
 
-        <ListBox x:Name="LstB_Personen" Height="100" ItemsSource="{Binding Personenliste}">
+        <ListBox x:Name="LstB_Personen" Height="100" ItemsSource="{Binding Personenliste}" SelectedValuePath="Vorname">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type local:Person}">
                     <StackPanel Orientation="Horizontal">
@@ -61,7 +70,7 @@
 
         <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedIndex}"/>
         <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedItem, TargetNullValue=NULL}"/>
-        <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedValue}"/>
+        <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedValue, TargetNullValue=NULL}"/>
 
 
     </StackPanel>
