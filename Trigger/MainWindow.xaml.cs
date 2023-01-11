@@ -21,21 +21,32 @@ namespace Trigger
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public bool BoolVal { get; set; }
+
+
         public MainWindow()
         {
             InitializeComponent();
 
-            this.DataContext= this;
+            this.BoolVal = true;
+
+            //Setzen des DataContext
+            this.DataContext = this;
         }
 
-        public bool BoolVal { get; set; } = false;
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //EventHandler zum Ändern der Property
+        private void Btn_Ändern_Click(object sender, RoutedEventArgs e)
         {
             BoolVal = !BoolVal;
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BoolVal)));
+        }
+
+        private void ColorPicker_PickedColorChanged(object sender, RoutedPropertyChangedEventArgs<SolidColorBrush> e)
+        {
+            Tbl_Show.Text = e.NewValue.ToString();
         }
     }
 }
