@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Templates"
         mc:Ignorable="d"
-        Title="MainWindow" Height="247" Width="262">
+        Title="MainWindow" Height="338" Width="262"
+        Topmost="True">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Template">
@@ -42,6 +43,26 @@
                 Height="100"
                 Click="Button_Click"
                 Background="Yellow"/>
+
+        <ListBox x:Name="LstB_Personen" Height="100" ItemsSource="{Binding Personenliste}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type local:Person}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Text="{Binding Vorname}" Margin="2"/>
+                        <TextBlock Text="{Binding Nachname}" Margin="2"/>
+                        <TextBlock Text="{Binding Alter, StringFormat='({0})'}" Margin="2"/>
+                        <Button Content="Löschen" x:Name="Btn_Löschen" Click="Btn_Löschen_Click" Tag="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Content="Neu" x:Name="Btn_Neu" Click="Btn_Neu_Click"/>
+
+        <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedIndex}"/>
+        <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedItem, TargetNullValue=NULL}"/>
+        <Label Content="{Binding ElementName=LstB_Personen, Path=SelectedValue}"/>
+
 
     </StackPanel>
 </Window>
