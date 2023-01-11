@@ -7,8 +7,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\UserControls\M11_UserControls.csproj" />
-  </ItemGroup>
-
 </Project>

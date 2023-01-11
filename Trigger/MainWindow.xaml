@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trigger"
-        xmlns:uc="clr-namespace:UserControls;assembly=UserControls"
+        xmlns:uc="clr-namespace:UserControls;assembly=M11_UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="363" Width="267">
     <!--Mittels Triggern kann das Verhalten/Aussehen von Objekten unter bestimmten Umständen geändert werden-->
@@ -59,12 +59,15 @@
 
         <Button x:Name="Btn_Ändern" Click="Btn_Ändern_Click" Content="Ändern"/>
 
+        <Separator Margin="5"/>
 
-        <uc:ColorPicker x:Name="ColorPicker" ShowRectangle="False"
-                        PickedColorChanged="ColorPicker_PickedColorChanged">
-            <Button Content="Hallo" uc:ColorPicker.Count="6"/>
+        <!--Beispiel-Einbindung des UserControls aus M11_UserControls-->
+        <uc:ColorPicker x:Name="ColorPicker" Tap="ColorPicker_Tap" PickedColorChanged="ColorPicker_PickedColorChanged" ShowRectangle="False">
+            <!--Bsp-Verwendung einer AttachedProperty aus der ColorPicker-Klasse-->
+            <Button Content="Hallo" uc:ColorPicker.Count="3" Click="Button_Click"/>
         </uc:ColorPicker>
 
-        <TextBlock x:Name="Tbl_Show"/>
+        <!--Anzeige des PropertyChanged-Events-->
+        <TextBlock x:Name="Tbl_Changed"/>
     </StackPanel>
 </Window>

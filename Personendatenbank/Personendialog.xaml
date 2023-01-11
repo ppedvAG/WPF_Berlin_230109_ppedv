@@ -62,6 +62,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -77,6 +78,8 @@
         <TextBlock Text="Geschlecht:" 
                    VerticalAlignment="Top"
                    Grid.Row="5"/>
+        <TextBlock Text="Anzahl Kinder:" 
+                   Grid.Row="6"/>
 
         <TextBox x:Name="Tbx_Vorname"
                  Grid.Column="1"
@@ -130,8 +133,14 @@
                          GroupName="Rbg_Gender"
                          IsChecked="{Binding Geschlecht, Converter={StaticResource gender2bool}, ConverterParameter={x:Static local:Gender.Divers}}"/>
         </StackPanel>
+        
+        <local:IntegerUpDown x:Name="Iud_Kinder" 
+                          Grid.Row="6" Grid.Column="1" Margin="2"
+                          Value="{Binding Kinder, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, ValidatesOnDataErrors=True}"
+                          Validation.ErrorTemplate="{StaticResource CtpError}"/>
 
-        <WrapPanel Grid.Row="6" Grid.ColumnSpan="2"
+
+        <WrapPanel Grid.Row="7" Grid.ColumnSpan="2"
                    HorizontalAlignment="Right" Margin="0,5">
             <Button x:Name="Btn_Ok"
                     Content="OK"
@@ -148,6 +157,7 @@
                                     <Condition Binding="{Binding ElementName=Tbx_Nachname, Path=(Validation.HasError)}" Value="False"/>
                                     <Condition Binding="{Binding ElementName=Dpr_Geburtsdatum, Path=(Validation.HasError)}" Value="False"/>
                                     <Condition Binding="{Binding ElementName=Cbb_Lieblingsfarbe, Path=(Validation.HasError)}" Value="False"/>
+                                    <Condition Binding="{Binding ElementName=Iud_Kinder, Path=(Validation.HasError)}" Value="False"/>
                                 </MultiDataTrigger.Conditions>
 
                                 <Setter Property="IsEnabled" Value="True"/>
