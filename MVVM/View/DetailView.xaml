@@ -45,13 +45,13 @@
                 <Border BorderBrush="Red" BorderThickness="1" x:Name="BdrAep">
                     <AdornedElementPlaceholder x:Name="Aep"/>
                 </Border>
-                <TextBlock Text="!" Foreground="Red" FontSize="{StaticResource Dbl_Fontsize}"
+                <TextBlock Text="!" Foreground="Red" FontSize="{StaticResource double_FontSize}"
                            Margin="3,0" FontWeight="Bold" VerticalAlignment="Center"/>
                 <Popup AllowsTransparency="True" PopupAnimation="Slide"
                        PlacementTarget="{Binding ElementName=BdrAep}" Placement="Bottom"
                        IsOpen="{Binding ElementName=Aep, Path=AdornedElement.IsMouseOver, Mode=OneWay}">
                     <TextBlock Text="{Binding ElementName=Aep, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
-                               Foreground="White" Background="Red" Padding="2" FontSize="{StaticResource Dbl_Fontsize}"/>
+                               Foreground="White" Background="Red" Padding="2" FontSize="{StaticResource double_FontSize}"/>
                 </Popup>
             </StackPanel>
         </ControlTemplate>
